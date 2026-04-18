@@ -131,6 +131,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Course Feedback ---
+  const feedbackBtns = document.querySelectorAll('.feedback-btn');
+  const feedbackThanks = document.getElementById('feedback-thanks');
+  const feedbackButtonsContainer = document.getElementById('feedback-buttons');
+
+  if (feedbackBtns.length > 0) {
+    // Check if already submitted
+    const savedFeedback = localStorage.getItem('ai-decoded-feedback');
+    if (savedFeedback) {
+      if (feedbackButtonsContainer) feedbackButtonsContainer.style.display = 'none';
+      if (feedbackThanks) feedbackThanks.classList.remove('hidden');
+    }
+
+    feedbackBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        localStorage.setItem('ai-decoded-feedback', btn.dataset.feedback);
+        if (feedbackButtonsContainer) feedbackButtonsContainer.style.display = 'none';
+        if (feedbackThanks) feedbackThanks.classList.remove('hidden');
+      });
+    });
+  }
+
   // --- Landing Page: Update Progress ---
   const progressBar = document.querySelector('.progress-bar-fill');
   const progressText = document.querySelector('.progress-text');
