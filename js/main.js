@@ -33,7 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     retryBtn.textContent = 'Try Again';
     retryBtn.style.display = 'none';
     retryBtn.style.marginLeft = '0.5rem';
-    submitBtn.parentNode.insertBefore(retryBtn, submitBtn.nextSibling);
+    if (submitBtn && submitBtn.parentNode) {
+      submitBtn.parentNode.insertBefore(retryBtn, submitBtn.nextSibling);
+    }
 
     quizResults.set(index, false); // not yet correct
 
@@ -141,14 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedFeedback = localStorage.getItem('ai-decoded-feedback');
     if (savedFeedback) {
       if (feedbackButtonsContainer) feedbackButtonsContainer.style.display = 'none';
-      if (feedbackThanks) feedbackThanks.classList.remove('hidden');
+      if (feedbackThanks) feedbackThanks.style.display = 'block';
     }
 
     feedbackBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         localStorage.setItem('ai-decoded-feedback', btn.dataset.feedback);
         if (feedbackButtonsContainer) feedbackButtonsContainer.style.display = 'none';
-        if (feedbackThanks) feedbackThanks.classList.remove('hidden');
+        if (feedbackThanks) feedbackThanks.style.display = 'block';
       });
     });
   }
