@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1: What is AI, Really? — AI Decoded</title>
+  <meta name="description" content="AI vs. machine learning vs. deep learning. How machines learn from data. The three types of learning explained simply.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
+          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
+        },
+      },
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-body bg-off-white">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Nav -->
+  <nav class="bg-navy py-4" aria-label="Course navigation">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="../index.html" class="text-white font-heading font-bold text-lg">AI Decoded</a>
+      <span class="text-white/60 text-sm">Lesson 1 of 6</span>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="py-12 lg:py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Lesson Header -->
+        <div class="mb-10">
+          <span class="tag-pill mb-3 inline-block">Lesson 1</span>
+          <h1 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">What is AI, Really?</h1>
+          <p class="text-gray-600 text-lg">Before we can understand ChatGPT, Claude, or any AI tool, we need to understand the building blocks. This lesson clears up the most common confusion: what's the difference between AI, machine learning, and deep learning?</p>
+        </div>
+
+        <!-- Content -->
+        <div class="prose max-w-none">
+
+          <h2 class="font-heading text-2xl font-bold text-navy mb-4">The Nesting Dolls of AI</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            People use "AI," "machine learning," and "deep learning" interchangeably. They're not the same thing. Think of them as nesting dolls:
+          </p>
+
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <div class="space-y-4">
+              <div class="border-2 border-navy rounded-lg p-4">
+                <p class="font-bold text-navy text-sm uppercase tracking-wider mb-1">Artificial Intelligence (AI)</p>
+                <p class="text-gray-600 text-sm">The broadest concept. Any system that can perform tasks that normally require human intelligence. This includes everything from a chess program to Siri to ChatGPT.</p>
+                <div class="border-2 border-terracotta rounded-lg p-4 mt-3">
+                  <p class="font-bold text-terracotta text-sm uppercase tracking-wider mb-1">Machine Learning (ML)</p>
+                  <p class="text-gray-600 text-sm">A subset of AI. Instead of being programmed with explicit rules, these systems learn patterns from data. You show it thousands of examples, and it figures out the rules on its own.</p>
+                  <div class="border-2 border-gold rounded-lg p-4 mt-3">
+                    <p class="font-bold text-yellow-700 text-sm uppercase tracking-wider mb-1">Deep Learning</p>
+                    <p class="text-gray-600 text-sm">A subset of ML that uses neural networks with many layers. This is what powers ChatGPT, image generators, and most modern AI breakthroughs.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="analogy-box">
+            <strong>Think of it this way:</strong> All deep learning is machine learning, and all machine learning is AI. But not all AI is machine learning. A rule-based spam filter that checks for specific keywords is AI, but it's not machine learning because it doesn't learn from data.
+          </div>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">How Does Machine Learning Actually Work?</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Traditional programming works like this: you give the computer <strong>rules</strong> and <strong>data</strong>, and it gives you <strong>answers</strong>.
+          </p>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Machine learning flips this. You give the computer <strong>data</strong> and <strong>answers</strong>, and it figures out the <strong>rules</strong>.
+          </p>
+
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="text-center">
+                <p class="font-bold text-navy text-sm mb-2">Traditional Programming</p>
+                <div class="bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
+                  Rules + Data &rarr; <strong>Answers</strong><br>
+                  <span class="text-xs text-gray-400 mt-1 block">"If email contains 'free money,' mark as spam"</span>
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="font-bold text-terracotta text-sm mb-2">Machine Learning</p>
+                <div class="bg-orange-50 rounded-lg p-4 text-sm text-gray-600">
+                  Data + Answers &rarr; <strong>Rules</strong><br>
+                  <span class="text-xs text-gray-400 mt-1 block">"Here are 10,000 emails and which are spam. Figure it out."</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            This is why ML is so powerful. Instead of a human trying to write every possible rule, the machine discovers patterns that humans might never notice.
+          </p>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">The Three Types of Machine Learning</h2>
+
+          <div class="space-y-4 mb-6">
+            <div class="key-term">
+              <dt>Supervised Learning</dt>
+              <dd>You give the model labeled examples (input + correct answer). It learns to predict answers for new inputs.</dd>
+              <dd class="mt-2 text-xs text-gray-400"><em>Example: Showing thousands of photos labeled "cat" or "dog" so it can classify new photos.</em></dd>
+            </div>
+
+            <div class="key-term">
+              <dt>Unsupervised Learning</dt>
+              <dd>You give the model data without labels. It finds patterns and groups on its own.</dd>
+              <dd class="mt-2 text-xs text-gray-400"><em>Example: Grouping customers by purchasing behavior without telling it what the groups should be.</em></dd>
+            </div>
+
+            <div class="key-term">
+              <dt>Reinforcement Learning</dt>
+              <dd>The model learns by trial and error, receiving rewards for good actions and penalties for bad ones.</dd>
+              <dd class="mt-2 text-xs text-gray-400"><em>Example: Training a robot to walk by rewarding it when it stays upright.</em></dd>
+            </div>
+          </div>
+
+          <div class="analogy-box">
+            <strong>Analogy:</strong> Supervised learning is like learning with a teacher who tells you the right answers. Unsupervised learning is like exploring a new city without a map. Reinforcement learning is like learning to ride a bike — you fall, adjust, and eventually get it right.
+          </div>
+
+          <!-- Deep Dive -->
+          <div class="deep-dive mt-8">
+            <button class="deep-dive-toggle" aria-expanded="false">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              Deep Dive: Why Does This Matter?
+            </button>
+            <div class="deep-dive-content">
+              <p>Understanding these categories helps you evaluate AI tools critically. When someone says "our product uses AI," you can ask: <em>What kind?</em> Is it a rule-based system? A machine learning model trained on data? A deep learning model? Each has different strengths, limitations, and implications for how much you should trust its output.</p>
+              <p class="mt-3">Most of the AI making headlines today — ChatGPT, Claude, Midjourney, self-driving cars — is deep learning. That's what we'll focus on for the rest of this course.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Knowledge Check -->
+        <div class="mt-10">
+          <h3 class="font-heading text-xl font-bold text-navy mb-4">Knowledge Check</h3>
+
+          <div class="quiz" data-answer="b">
+            <p class="quiz-question">A company feeds their AI system 50,000 customer emails that have been labeled as "complaint," "question," or "compliment." The system learns to automatically categorize new incoming emails. What type of machine learning is this?</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>Unsupervised Learning</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>Supervised Learning</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <span class="radio-dot"></span>
+                <span>Reinforcement Learning</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! The emails are labeled (complaint, question, compliment), so the model is learning from labeled examples. That's supervised learning.</div>
+            <div class="quiz-feedback incorrect">Not quite. The key clue is that the emails are <strong>labeled</strong> — the model is given both the data and the correct answers. That's supervised learning.</div>
+          </div>
+
+          <div class="quiz mt-6" data-answer="c">
+            <p class="quiz-question">Which statement is true about the relationship between AI, machine learning, and deep learning?</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>They are three different names for the same thing</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>Machine learning is the broadest category, containing both AI and deep learning</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <span class="radio-dot"></span>
+                <span>Deep learning is a subset of machine learning, which is a subset of AI</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! Like nesting dolls: AI is the biggest (broadest concept), ML fits inside AI, and deep learning fits inside ML.</div>
+            <div class="quiz-feedback incorrect">Not quite. Think of the nesting dolls: AI is the broadest concept. Machine learning is a specific approach within AI. Deep learning is a specific technique within machine learning.</div>
+          </div>
+        </div>
+
+        <!-- Lesson Complete -->
+        <label class="lesson-complete-check">
+          <input type="checkbox" data-lesson="lesson-1">
+          <span>Mark Lesson 1 as complete</span>
+        </label>
+
+        <!-- Lesson Nav -->
+        <div class="lesson-nav">
+          <a href="../index.html">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            All Lessons
+          </a>
+          <a href="lesson-2.html">
+            Next: Neural Networks
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-navy py-6">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula. Built with curiosity and Claude Code.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

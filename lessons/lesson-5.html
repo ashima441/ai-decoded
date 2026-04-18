@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 5: RAG, Fine-Tuning & Embeddings — AI Decoded</title>
+  <meta name="description" content="Learn how to make AI work with your own data using RAG, fine-tuning, and embeddings. Understand when to use each approach.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
+          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
+        },
+      },
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-body bg-off-white">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Nav -->
+  <nav class="bg-navy py-4" aria-label="Course navigation">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="../index.html" class="text-white font-heading font-bold text-lg">AI Decoded</a>
+      <span class="text-white/60 text-sm">Lesson 5 of 6</span>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="py-12 lg:py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Lesson Header -->
+        <div class="mb-10">
+          <span class="tag-pill mb-3 inline-block">Lesson 5</span>
+          <h1 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">RAG, Fine-Tuning & Embeddings</h1>
+          <p class="text-gray-600 text-lg">You've learned how LLMs work and how to prompt them. But what if you need the AI to know about YOUR specific data — your company's docs, your product manuals, your research? That's where fine-tuning and RAG come in.</p>
+        </div>
+
+        <!-- Content -->
+        <div class="prose max-w-none">
+
+          <h2 class="font-heading text-2xl font-bold text-navy mb-4">Fine-Tuning: Teaching an Expert New Tricks</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Fine-tuning means taking a pre-trained model and training it further on a specific, smaller dataset. The model has already learned the fundamentals of language from its massive pre-training — fine-tuning adapts that general knowledge to a specialized domain or task.
+          </p>
+
+          <div class="analogy-box">
+            <strong>Analogy:</strong> A chef trained in French cooking (pre-trained) learning to specialize in Japanese cuisine (fine-tuned). They don't start from zero — they adapt existing skills like knife technique and flavor balancing to a new culinary tradition.
+          </div>
+
+          <p class="text-gray-700 text-base leading-relaxed mb-4 mt-4">
+            <strong>When to use fine-tuning:</strong> When you need the model to consistently behave a certain way or understand domain-specific patterns. For example, training a model on thousands of legal contracts so it writes in the right legal style, or fine-tuning a model on your company's support conversations so it matches your brand voice.
+          </p>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">RAG: Retrieval-Augmented Generation</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Instead of relying only on what the model learned during training, RAG lets the model retrieve relevant information from an external knowledge base before generating its response. It's like giving the AI access to a reference library.
+          </p>
+
+          <h3 class="font-heading text-lg font-bold text-navy mt-6 mb-3">How RAG Works</h3>
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <div class="space-y-3">
+              <div class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-7 h-7 bg-navy text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                <p class="text-gray-600 text-sm"><strong>User asks a question</strong> — "What is our return policy for electronics?"</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-7 h-7 bg-navy text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                <p class="text-gray-600 text-sm"><strong>System searches knowledge base</strong> — finds the relevant return policy documents</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-7 h-7 bg-terracotta text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+                <p class="text-gray-600 text-sm"><strong>Relevant docs retrieved</strong> — the matching policy sections are pulled out</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-7 h-7 bg-terracotta text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
+                <p class="text-gray-600 text-sm"><strong>LLM generates answer</strong> — uses those docs + the question to produce an accurate, grounded response</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="analogy-box">
+            <strong>Analogy:</strong> Instead of answering from memory (which might be wrong), you look up the answer in a textbook first, then explain it in your own words. You get the accuracy of the source material combined with the fluency of natural language.
+          </div>
+
+          <p class="text-gray-700 text-base leading-relaxed mb-4 mt-4">
+            <strong>Why RAG matters:</strong> It reduces hallucinations (the model making things up), keeps answers current without retraining, and lets you ground responses in your actual data. There's no need to retrain the model when your documents change — just update the knowledge base.
+          </p>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Fine-Tuning vs. RAG</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            These are two different tools for different problems. Here's how they compare:
+          </p>
+
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="text-center">
+                <p class="font-bold text-navy text-sm mb-2">Fine-Tuning</p>
+                <div class="bg-gray-50 rounded-lg p-4 text-sm text-gray-600 text-left">
+                  <ul class="space-y-2">
+                    <li>Permanently changes model weights</li>
+                    <li>Bakes knowledge into the model</li>
+                    <li>Good for behavior, style, and tone</li>
+                    <li>Requires retraining when data changes</li>
+                    <li>Higher upfront cost</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="font-bold text-terracotta text-sm mb-2">RAG</p>
+                <div class="bg-orange-50 rounded-lg p-4 text-sm text-gray-600 text-left">
+                  <ul class="space-y-2">
+                    <li>Keeps model weights as-is</li>
+                    <li>Provides info at query time</li>
+                    <li>Good for factual, changing info</li>
+                    <li>Just update the knowledge base</li>
+                    <li>Lower ongoing cost</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            In practice, many production systems use both together — fine-tuning to set the model's behavior and tone, and RAG to provide accurate, up-to-date factual information.
+          </p>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Embeddings: Meaning as Numbers</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Embeddings are a way to represent words, sentences, or documents as numbers (vectors) so that similar meanings end up close together in mathematical space. This is how computers understand that words are related.
+          </p>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            For example, "king" and "queen" would be close together because they share similar meaning. "King" and "bicycle" would be far apart. "Happy" and "joyful" would be neighbors, while "happy" and "concrete" would be distant.
+          </p>
+
+          <div class="analogy-box">
+            <strong>Analogy:</strong> Imagine plotting words on a map where similar words are in the same neighborhood. "Dog," "puppy," and "canine" would all be on the same block. "Refrigerator" would be across town. Embeddings create this map mathematically.
+          </div>
+
+          <p class="text-gray-700 text-base leading-relaxed mb-4 mt-4">
+            <strong>Why embeddings matter:</strong> Embeddings power the search step in RAG. When a user asks a question, the system converts the question into an embedding, then finds documents with similar embeddings. This is how it retrieves relevant information — not by matching keywords, but by matching meaning.
+          </p>
+
+          <!-- Deep Dive -->
+          <div class="deep-dive mt-8">
+            <button class="deep-dive-toggle" aria-expanded="false">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              Deep Dive: Why Not Just Retrain the Whole Model?
+            </button>
+            <div class="deep-dive-content">
+              <p><strong>Pre-training an LLM is extraordinarily expensive.</strong> Training a frontier model from scratch costs millions of dollars in compute, takes months of processing time, and requires massive datasets. Only a handful of companies in the world can do it.</p>
+              <p class="mt-3"><strong>Fine-tuning is much cheaper.</strong> It typically takes hours or days instead of months, and costs thousands of dollars instead of millions. You're adjusting an existing model, not building one from the ground up.</p>
+              <p class="mt-3"><strong>RAG requires no retraining at all.</strong> You simply update the documents in your knowledge base. This makes it the most cost-effective and flexible option for keeping AI responses current and accurate. That's why RAG has become one of the most popular patterns in production AI systems.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Knowledge Check -->
+        <div class="mt-10">
+          <h3 class="font-heading text-xl font-bold text-navy mb-4">Knowledge Check</h3>
+
+          <div class="quiz" data-answer="b">
+            <p class="quiz-question">Your company wants their AI chatbot to answer questions using the latest product documentation that changes weekly. Should they use fine-tuning or RAG?</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>Fine-tuning</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>RAG</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <span class="radio-dot"></span>
+                <span>Neither</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! RAG is perfect here — it retrieves current documents at query time without needing to retrain the model every week.</div>
+            <div class="quiz-feedback incorrect">Not quite. The key clue is that the documentation <strong>changes weekly</strong>. Fine-tuning would require retraining every time docs change. RAG retrieves current documents at query time — just update the knowledge base and you're done.</div>
+          </div>
+
+          <div class="quiz mt-6" data-answer="b">
+            <p class="quiz-question">What are embeddings?</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>A way to embed images inside text</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>A way to represent meaning as numbers so similar concepts are close together</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <span class="radio-dot"></span>
+                <span>A type of neural network</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! Embeddings convert text into numerical vectors where similar meanings are positioned close together in mathematical space. This is what powers semantic search in RAG systems.</div>
+            <div class="quiz-feedback incorrect">Not quite. Embeddings are a way to represent meaning as numbers (vectors). Words with similar meanings — like "happy" and "joyful" — end up close together, while unrelated words are far apart. This powers the search in RAG.</div>
+          </div>
+        </div>
+
+        <!-- Lesson Complete -->
+        <label class="lesson-complete-check">
+          <input type="checkbox" data-lesson="lesson-5">
+          <span>Mark Lesson 5 as complete</span>
+        </label>
+
+        <!-- Lesson Nav -->
+        <div class="lesson-nav">
+          <a href="lesson-4.html">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Previous: Prompt Engineering
+          </a>
+          <a href="lesson-6.html">
+            Next: AI Agents & What's Next
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-navy py-6">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula. Built with curiosity and Claude Code.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

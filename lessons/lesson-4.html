@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4: Prompt Engineering & Working With AI — AI Decoded</title>
+  <meta name="description" content="Learn prompt engineering techniques: zero-shot, few-shot, chain-of-thought, system prompts, and temperature settings to get the best results from AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
+          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
+        },
+      },
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-body bg-off-white">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Nav -->
+  <nav class="bg-navy py-4" aria-label="Course navigation">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="../index.html" class="text-white font-heading font-bold text-lg">AI Decoded</a>
+      <span class="text-white/60 text-sm">Lesson 4 of 6</span>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="py-12 lg:py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Lesson Header -->
+        <div class="mb-10">
+          <span class="tag-pill mb-3 inline-block">Lesson 4</span>
+          <h1 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">Prompt Engineering & Working With AI</h1>
+          <p class="text-gray-600 text-lg">You've learned how LLMs process language. Now it's time to learn how to talk to them effectively. The quality of what you get out of an AI depends heavily on the quality of what you put in.</p>
+        </div>
+
+        <!-- Content -->
+        <div class="prose max-w-none">
+
+          <h2 class="font-heading text-2xl font-bold text-navy mb-4">What is Prompt Engineering?</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Prompt engineering is the practice of crafting effective inputs (prompts) to get the best outputs from an LLM. It's not about tricking the AI — it's about communicating clearly so the model understands exactly what you need.
+          </p>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Think of it this way: if you asked a new coworker to "write something about our product," you'd get a very different result than if you said "write a 200-word product description for our homepage, targeting small business owners, in a friendly but professional tone." The same applies to AI.
+          </p>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Key Techniques</h2>
+
+          <div class="space-y-4 mb-6">
+            <div class="key-term">
+              <dt>Zero-Shot Prompting</dt>
+              <dd>Ask the model directly with no examples. You rely entirely on the model's pre-trained knowledge to complete the task.</dd>
+              <dd class="mt-2 text-xs text-gray-400"><em>Example: "Summarize this article."</em></dd>
+            </div>
+
+            <div class="key-term">
+              <dt>Few-Shot Prompting</dt>
+              <dd>Give the model a few examples of what you want before asking it to perform the task. This helps the model understand the pattern, format, and style you're looking for.</dd>
+              <dd class="mt-2 text-xs text-gray-400"><em>Example: "Here are 3 examples of good summaries. Now summarize this."</em></dd>
+            </div>
+
+            <div class="key-term">
+              <dt>Chain-of-Thought Prompting</dt>
+              <dd>Ask the model to "think step by step" to improve its reasoning. This technique dramatically improves performance on math, logic, and complex problems.</dd>
+              <dd class="mt-2 text-xs text-gray-400"><em>Example: "Solve this math problem. Show your reasoning step by step."</em></dd>
+            </div>
+
+            <div class="key-term">
+              <dt>System Prompts</dt>
+              <dd>Set the role, context, or behavioral guidelines for the model before the conversation begins. This shapes how the model responds throughout the entire interaction.</dd>
+              <dd class="mt-2 text-xs text-gray-400"><em>Example: "You are a helpful math tutor for 8th graders."</em></dd>
+            </div>
+          </div>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Temperature: Controlling Creativity</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Temperature is a setting that controls how "creative" or "random" a model's output is. It affects how the model chooses its next word from the list of possible words.
+          </p>
+
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="text-center">
+                <p class="font-bold text-navy text-sm mb-2">Low Temperature (close to 0)</p>
+                <div class="bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
+                  Deterministic & focused<br>
+                  <span class="text-xs text-gray-400 mt-1 block">Great for factual tasks, code generation, and consistent answers. The model picks the most likely word every time.</span>
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="font-bold text-terracotta text-sm mb-2">High Temperature (1+)</p>
+                <div class="bg-orange-50 rounded-lg p-4 text-sm text-gray-600">
+                  Creative & varied<br>
+                  <span class="text-xs text-gray-400 mt-1 block">Great for brainstorming, creative writing, and exploring diverse ideas. The model is more willing to pick unexpected words.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Real-World Example: Prompt Engineering in Practice</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            When I built my portfolio website using Claude Code (an AI agent), I created a file called <code class="text-sm bg-gray-100 px-1.5 py-0.5 rounded">CLAUDE.md</code> that acted as a system prompt — it told the AI what the project was, what design rules to follow, and what tone to use. This is prompt engineering applied to a real development workflow.
+          </p>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Instead of giving the AI vague instructions each time, the system prompt file ensured every interaction started with the right context. The AI consistently produced code that matched the project's style because it always knew the rules.
+          </p>
+
+          <div class="analogy-box">
+            <strong>Think of it this way:</strong> A system prompt is like onboarding a new team member. You don't explain the company, the project, and the coding standards every single time you assign a task — you give them a handbook once, and they reference it for everything they do.
+          </div>
+
+          <!-- Deep Dive -->
+          <div class="deep-dive mt-8">
+            <button class="deep-dive-toggle" aria-expanded="false">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              Deep Dive: Tips for Better Prompts
+            </button>
+            <div class="deep-dive-content">
+              <p><strong>Be specific.</strong> Instead of "write about dogs," try "write a 150-word paragraph about why golden retrievers make great family pets."</p>
+              <p class="mt-3"><strong>Provide context.</strong> Tell the model who the audience is, what the purpose is, and any constraints. The more context, the better the output.</p>
+              <p class="mt-3"><strong>Give examples.</strong> If you want a specific format or style, show the model what good output looks like (few-shot prompting).</p>
+              <p class="mt-3"><strong>Specify the format you want.</strong> Say "respond as a bulleted list," "use markdown," or "return JSON" — don't leave the format to chance.</p>
+              <p class="mt-3"><strong>Iterate and refine.</strong> Your first prompt rarely produces the perfect result. Treat it as a conversation — give feedback, adjust your prompt, and try again. Prompt engineering is an iterative process.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Knowledge Check -->
+        <div class="mt-10">
+          <h3 class="font-heading text-xl font-bold text-navy mb-4">Knowledge Check</h3>
+
+          <div class="quiz" data-answer="b">
+            <p class="quiz-question">You want an AI to write a professional email, so you show it 3 examples of good professional emails first, then ask it to write one. What technique is this?</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>Zero-shot</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>Few-shot</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <span class="radio-dot"></span>
+                <span>Chain-of-thought</span>
+              </label>
+              <label class="quiz-option" data-value="d">
+                <span class="radio-dot"></span>
+                <span>Reinforcement learning</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! Providing examples before your request is the definition of few-shot prompting. The model learns the pattern from your examples and applies it.</div>
+            <div class="quiz-feedback incorrect">Not quite. The key clue is that you're showing the model <strong>examples</strong> before asking it to perform the task. That's few-shot prompting.</div>
+          </div>
+
+          <div class="quiz mt-6" data-answer="b">
+            <p class="quiz-question">When would you use a low temperature setting (close to 0)?</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>When you want creative brainstorming ideas</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>When you want consistent, factual answers</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <span class="radio-dot"></span>
+                <span>When you want the model to be more random</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! Low temperature makes the model more deterministic and focused — perfect for factual tasks where you want consistent, reliable answers.</div>
+            <div class="quiz-feedback incorrect">Not quite. Low temperature (close to 0) makes the model more <strong>deterministic</strong> — it picks the most likely word each time. This is ideal for factual, consistent answers. High temperature is for creativity and randomness.</div>
+          </div>
+        </div>
+
+        <!-- Lesson Complete -->
+        <label class="lesson-complete-check">
+          <input type="checkbox" data-lesson="lesson-4">
+          <span>Mark Lesson 4 as complete</span>
+        </label>
+
+        <!-- Lesson Nav -->
+        <div class="lesson-nav">
+          <a href="lesson-3.html">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Previous: LLMs & Transformers
+          </a>
+          <a href="lesson-5.html">
+            Next: RAG & Fine-Tuning
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-navy py-6">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula. Built with curiosity and Claude Code.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

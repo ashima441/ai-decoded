@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2: Neural Networks & Deep Learning — AI Decoded</title>
+  <meta name="description" content="How neural networks work, what makes deep learning 'deep,' and why the 2010s changed everything.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
+          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
+        },
+      },
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-body bg-off-white">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Nav -->
+  <nav class="bg-navy py-4" aria-label="Course navigation">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="../index.html" class="text-white font-heading font-bold text-lg">AI Decoded</a>
+      <span class="text-white/60 text-sm">Lesson 2 of 6</span>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="py-12 lg:py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Lesson Header -->
+        <div class="mb-10">
+          <span class="tag-pill mb-3 inline-block">Lesson 2</span>
+          <h1 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">Neural Networks & Deep Learning</h1>
+          <p class="text-gray-600 text-lg">Neural networks are the engine behind today's most impressive AI. In this lesson, you'll learn what they are, how they're structured, and why "deep learning" suddenly took off in the 2010s.</p>
+        </div>
+
+        <!-- Content -->
+        <div class="prose max-w-none">
+
+          <h2 class="font-heading text-2xl font-bold text-navy mb-4">What Is a Neural Network?</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            A neural network is a computing system inspired by the human brain. It's made up of layers of interconnected "neurons" that work together to process information and make predictions.
+          </p>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Every neural network has three types of layers:
+          </p>
+
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <div class="space-y-4">
+              <div class="border-2 border-navy rounded-lg p-4">
+                <p class="font-bold text-navy text-sm uppercase tracking-wider mb-1">The Full Neural Network</p>
+                <p class="text-gray-600 text-sm mb-3">Data flows through layers, each one transforming it further.</p>
+                <div class="border-2 border-terracotta rounded-lg p-4">
+                  <p class="font-bold text-terracotta text-sm uppercase tracking-wider mb-1">Input Layer</p>
+                  <p class="text-gray-600 text-sm">Receives the raw data &mdash; numbers, pixels, words, or any information you feed in.</p>
+                  <div class="border-2 border-gold rounded-lg p-4 mt-3">
+                    <p class="font-bold text-yellow-700 text-sm uppercase tracking-wider mb-1">Hidden Layers</p>
+                    <p class="text-gray-600 text-sm">The "thinking" happens here. Each layer detects patterns, combining simple features into complex ones.</p>
+                    <div class="border-2 border-green-500 rounded-lg p-4 mt-3">
+                      <p class="font-bold text-green-700 text-sm uppercase tracking-wider mb-1">Output Layer</p>
+                      <p class="text-gray-600 text-sm">Produces the final prediction &mdash; a category, a number, a probability, or a word.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="analogy-box">
+            <strong>Analogy:</strong> Like an assembly line &mdash; raw materials go in, each station transforms them, and a finished product comes out. The input layer loads the raw materials, hidden layers are the workstations, and the output layer is the finished product rolling off the line.
+          </div>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">What Makes It "Deep"?</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            <strong>Deep learning</strong> is simply a neural network with <em>many</em> hidden layers. The word "deep" refers to the <strong>depth</strong> (number of layers), not the complexity of thinking.
+          </p>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            A simple neural network might have one or two hidden layers. A deep neural network can have dozens, hundreds, or even thousands. More layers allow the network to learn increasingly abstract and complex patterns from data.
+          </p>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Why Deep Learning Broke Through in the 2010s</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Neural networks have been around since the 1950s. So why did they suddenly start beating humans at image recognition and language tasks in the 2010s? Three ingredients finally came together:
+          </p>
+
+          <div class="space-y-4 mb-6">
+            <div class="key-term">
+              <dt>1. More Data (Internet Scale)</dt>
+              <dd>The internet produced massive datasets &mdash; billions of images, web pages, and documents &mdash; giving neural networks the fuel they needed to learn complex patterns.</dd>
+            </div>
+
+            <div class="key-term">
+              <dt>2. More Compute (GPUs)</dt>
+              <dd>Graphics processing units (GPUs), originally built for video games, turned out to be perfect for the math neural networks need. They made training thousands of times faster.</dd>
+            </div>
+
+            <div class="key-term">
+              <dt>3. Better Algorithms</dt>
+              <dd>Improvements to backpropagation and new techniques like dropout and batch normalization made it possible to train deeper networks without them breaking down.</dd>
+            </div>
+          </div>
+
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Without all three, deep learning wouldn't work. Data without compute is too slow. Compute without data has nothing to learn from. And without better algorithms, deep networks couldn't be trained at all.
+          </p>
+
+          <!-- Deep Dive -->
+          <div class="deep-dive mt-8">
+            <button class="deep-dive-toggle" aria-expanded="false">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              Deep Dive: How Does a Neural Network Actually Learn?
+            </button>
+            <div class="deep-dive-content">
+              <p>Training a neural network is a loop that repeats millions of times:</p>
+              <ol class="list-decimal list-inside mt-3 space-y-2 text-gray-700">
+                <li><strong>Forward pass:</strong> Feed data through the network and get a prediction.</li>
+                <li><strong>Compare:</strong> Measure how far off the prediction is from the correct answer (this measurement is called the <em>loss</em>).</li>
+                <li><strong>Backpropagation:</strong> Work backward through the network, calculating how much each connection (weight) contributed to the error.</li>
+                <li><strong>Adjust weights:</strong> Nudge each weight slightly to reduce the error next time.</li>
+                <li><strong>Repeat:</strong> Do this millions of times with different examples until the network gets good at its task.</li>
+              </ol>
+              <p class="mt-3">It's like adjusting thousands of tiny dials simultaneously &mdash; each adjustment makes the predictions a little more accurate. Over millions of rounds, the network goes from random guessing to remarkable accuracy.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Knowledge Check -->
+        <div class="mt-10">
+          <h3 class="font-heading text-xl font-bold text-navy mb-4">Knowledge Check</h3>
+
+          <div class="quiz" data-answer="b">
+            <p class="quiz-question">What makes a neural network "deep"?</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>It thinks deeply about problems</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>It has many hidden layers</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <span class="radio-dot"></span>
+                <span>It uses deep data</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! "Deep" refers to the depth of the network &mdash; the number of hidden layers. More layers allow it to learn more complex patterns.</div>
+            <div class="quiz-feedback incorrect">Not quite. "Deep" in deep learning refers to the number of <strong>hidden layers</strong> in the neural network, not the depth of thinking or data.</div>
+          </div>
+
+          <div class="quiz mt-6" data-answer="b">
+            <p class="quiz-question">Which three factors enabled the deep learning breakthrough in the 2010s?</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>Better keyboards, faster internet, more programmers</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>More data, more compute power, better algorithms</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <span class="radio-dot"></span>
+                <span>Bigger screens, faster typing, smarter humans</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! Internet-scale data, GPU compute power, and algorithmic improvements like better backpropagation all came together to make deep learning practical.</div>
+            <div class="quiz-feedback incorrect">Not quite. The three key ingredients were: <strong>more data</strong> (from the internet), <strong>more compute power</strong> (GPUs), and <strong>better algorithms</strong> (backpropagation improvements).</div>
+          </div>
+        </div>
+
+        <!-- Lesson Complete -->
+        <label class="lesson-complete-check">
+          <input type="checkbox" data-lesson="lesson-2">
+          <span>Mark Lesson 2 as complete</span>
+        </label>
+
+        <!-- Lesson Nav -->
+        <div class="lesson-nav">
+          <a href="lesson-1.html">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Previous: What is AI?
+          </a>
+          <a href="lesson-3.html">
+            Next: LLMs & Transformers
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-navy py-6">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula. Built with curiosity and Claude Code.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

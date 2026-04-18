@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Decoded — A Crash Course for Curious Minds</title>
+  <meta name="description" content="A free, interactive crash course on AI and machine learning fundamentals. No coding required. Built for curious professionals who want to understand how AI actually works.">
+  <meta name="author" content="Ashima Sitaula">
+  <link rel="canonical" href="https://ashima441.github.io/ai-decoded/" />
+  <meta property="og:title" content="AI Decoded — A Crash Course for Curious Minds">
+  <meta property="og:description" content="Understand AI and machine learning in 30 minutes. No coding required.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
+          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
+        },
+      },
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body bg-off-white">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Hero -->
+  <header class="hero-gradient py-20 lg:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="tag-pill bg-white/20 text-white text-sm mb-4 inline-block">Free Interactive Course</span>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        AI Decoded
+      </h1>
+      <p class="text-gold text-xl sm:text-2xl font-heading font-medium mb-4">A Crash Course for Curious Minds</p>
+      <p class="text-white/80 text-lg max-w-2xl mx-auto mb-10">
+        Understand AI and machine learning in 30 minutes. No coding required. No jargon without explanation. Just clear, honest explanations built for people who want to understand how this technology actually works.
+      </p>
+
+      <!-- Progress -->
+      <div class="max-w-md mx-auto">
+        <div class="flex items-center justify-between text-sm text-white/70 mb-2">
+          <span class="progress-text">0 of 6 lessons completed</span>
+          <span class="text-white/50">~30 min</span>
+        </div>
+        <div class="progress-bar-bg h-2">
+          <div class="progress-bar-fill" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Course Overview -->
+    <section class="py-16 lg:py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-12">
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-navy mb-4">What You'll Learn</h2>
+          <p class="text-gray-600 max-w-xl mx-auto">Six short lessons that take you from "What is AI?" to understanding how language models, prompt engineering, and AI agents actually work.</p>
+        </div>
+
+        <!-- Lesson Cards -->
+        <div class="space-y-4">
+
+          <a href="lessons/lesson-1.html" class="lesson-card block bg-white rounded-xl p-6 shadow-md" data-lesson="lesson-1">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-terracotta/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-terracotta font-bold text-lg">1</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-heading font-semibold text-lg text-navy">What is AI, Really?</h3>
+                  <div class="completion-badge hidden items-center gap-1 text-green-600 text-xs font-semibold">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    Done
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm mt-1">AI vs. machine learning vs. deep learning. How machines learn from data. The three types of learning.</p>
+              </div>
+              <span class="text-gray-400 text-xs whitespace-nowrap mt-1">~5 min</span>
+            </div>
+          </a>
+
+          <a href="lessons/lesson-2.html" class="lesson-card block bg-white rounded-xl p-6 shadow-md" data-lesson="lesson-2">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-terracotta/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-terracotta font-bold text-lg">2</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-heading font-semibold text-lg text-navy">Neural Networks &amp; Deep Learning</h3>
+                  <div class="completion-badge hidden items-center gap-1 text-green-600 text-xs font-semibold">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    Done
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm mt-1">How neural networks process information. What makes learning "deep." Why it all clicked in the 2010s.</p>
+              </div>
+              <span class="text-gray-400 text-xs whitespace-nowrap mt-1">~5 min</span>
+            </div>
+          </a>
+
+          <a href="lessons/lesson-3.html" class="lesson-card block bg-white rounded-xl p-6 shadow-md" data-lesson="lesson-3">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-terracotta/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-terracotta font-bold text-lg">3</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-heading font-semibold text-lg text-navy">Large Language Models &amp; Transformers</h3>
+                  <div class="completion-badge hidden items-center gap-1 text-green-600 text-xs font-semibold">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    Done
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm mt-1">How LLMs predict text. The Transformer breakthrough. Key models and the vocabulary you need to know.</p>
+              </div>
+              <span class="text-gray-400 text-xs whitespace-nowrap mt-1">~5 min</span>
+            </div>
+          </a>
+
+          <a href="lessons/lesson-4.html" class="lesson-card block bg-white rounded-xl p-6 shadow-md" data-lesson="lesson-4">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-terracotta/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-terracotta font-bold text-lg">4</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-heading font-semibold text-lg text-navy">Prompt Engineering &amp; Working With AI</h3>
+                  <div class="completion-badge hidden items-center gap-1 text-green-600 text-xs font-semibold">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    Done
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm mt-1">How to talk to AI effectively. Zero-shot, few-shot, and chain-of-thought techniques. Real-world examples.</p>
+              </div>
+              <span class="text-gray-400 text-xs whitespace-nowrap mt-1">~5 min</span>
+            </div>
+          </a>
+
+          <a href="lessons/lesson-5.html" class="lesson-card block bg-white rounded-xl p-6 shadow-md" data-lesson="lesson-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-terracotta/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-terracotta font-bold text-lg">5</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-heading font-semibold text-lg text-navy">RAG, Fine-Tuning &amp; Embeddings</h3>
+                  <div class="completion-badge hidden items-center gap-1 text-green-600 text-xs font-semibold">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    Done
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm mt-1">How to customize AI for specific tasks. The difference between fine-tuning and RAG. How meaning becomes math.</p>
+              </div>
+              <span class="text-gray-400 text-xs whitespace-nowrap mt-1">~5 min</span>
+            </div>
+          </a>
+
+          <a href="lessons/lesson-6.html" class="lesson-card block bg-white rounded-xl p-6 shadow-md" data-lesson="lesson-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-terracotta/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-terracotta font-bold text-lg">6</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-heading font-semibold text-lg text-navy">AI Agents, Hallucinations &amp; What's Next</h3>
+                  <div class="completion-badge hidden items-center gap-1 text-green-600 text-xs font-semibold">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    Done
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm mt-1">AI that takes action. Why AI makes things up. Multimodal models. Why learning design matters more than ever.</p>
+              </div>
+              <span class="text-gray-400 text-xs whitespace-nowrap mt-1">~5 min</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-12 bg-warm-gray">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-xl p-8 shadow-md">
+          <h2 class="font-heading text-xl font-bold text-navy mb-3">Who Made This?</h2>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            Hi, I'm <a href="https://ashimasitaula.com" target="_blank" rel="noopener" class="text-terracotta font-medium hover:underline">Ashima Sitaula</a>. I have a PhD in Curriculum &amp; Instruction, a BSc in Computing, and 10+ years of experience designing learning systems. I built this course because I believe AI literacy shouldn't require an engineering degree. If you can read, you can understand how AI works.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="https://ashimasitaula.com" target="_blank" rel="noopener" class="text-sm text-terracotta font-semibold hover:underline">Portfolio</a>
+            <a href="https://github.com/ashima441" target="_blank" rel="noopener" class="text-sm text-terracotta font-semibold hover:underline">GitHub</a>
+            <a href="https://www.linkedin.com/in/ashima-sitaula-a05291112" target="_blank" rel="noopener" class="text-sm text-terracotta font-semibold hover:underline">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-navy py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula. Built with curiosity and Claude Code.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

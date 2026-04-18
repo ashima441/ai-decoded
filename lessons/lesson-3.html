@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3: Large Language Models & Transformers — AI Decoded</title>
+  <meta name="description" content="What LLMs are, how the Transformer architecture works, and the key vocabulary you need to talk about AI confidently.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
+          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
+        },
+      },
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-body bg-off-white">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Nav -->
+  <nav class="bg-navy py-4" aria-label="Course navigation">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="../index.html" class="text-white font-heading font-bold text-lg">AI Decoded</a>
+      <span class="text-white/60 text-sm">Lesson 3 of 6</span>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <article class="py-12 lg:py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Lesson Header -->
+        <div class="mb-10">
+          <span class="tag-pill mb-3 inline-block">Lesson 3</span>
+          <h1 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">Large Language Models & Transformers</h1>
+          <p class="text-gray-600 text-lg">ChatGPT, Claude, Gemini &mdash; they're all built on the same breakthrough architecture. This lesson explains what large language models are, how they generate text, and the key terms you need to know.</p>
+        </div>
+
+        <!-- Content -->
+        <div class="prose max-w-none">
+
+          <h2 class="font-heading text-2xl font-bold text-navy mb-4">What Is a Large Language Model (LLM)?</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            A large language model is a type of deep learning model trained on massive amounts of text. It works by predicting the <strong>next word (or token)</strong> in a sequence, which allows it to generate human-like text.
+          </p>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            When you ask an LLM a question, it doesn't look up the answer in a database. Instead, it generates a response one token at a time, each time predicting what text should come next based on everything before it.
+          </p>
+
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <p class="font-bold text-navy text-sm mb-3 uppercase tracking-wider">Key Insight</p>
+            <p class="text-gray-700 text-base leading-relaxed">
+              LLMs don't "understand" language the way humans do. They are very good at <strong>predicting what text should come next</strong> based on patterns in their training data. The result is text that is often remarkably coherent and useful &mdash; but it's pattern matching, not comprehension.
+            </p>
+          </div>
+
+          <div class="analogy-box">
+            <strong>Analogy:</strong> Like autocomplete on your phone, but trained on a huge portion of the internet and capable of generating entire paragraphs, not just words. Your phone predicts the next word; an LLM predicts the next thousand.
+          </div>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">The Transformer Architecture</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            The Transformer is the architecture that makes modern LLMs possible. It was introduced in a 2017 research paper titled <em>"Attention Is All You Need"</em> &mdash; and it lived up to its name.
+          </p>
+
+          <h3 class="font-heading text-xl font-bold text-navy mt-6 mb-3">The Key Innovation: Attention</h3>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Before Transformers, models processed text one word at a time, left to right. The <strong>attention mechanism</strong> changed everything: it allows the model to look at <em>all</em> the words at once and figure out which ones are most relevant to each other.
+          </p>
+
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <p class="font-bold text-navy text-sm mb-3 uppercase tracking-wider">Example</p>
+            <p class="text-gray-700 text-base leading-relaxed mb-2">
+              Consider the sentence: <em>"The cat sat on the mat because <strong>it</strong> was tired."</em>
+            </p>
+            <p class="text-gray-700 text-base leading-relaxed">
+              What does "it" refer to? A human instantly knows it means "the cat." The attention mechanism allows the model to make this same connection &mdash; it learns to attend to "cat" when processing "it," even though other nouns like "mat" are closer in the sentence.
+            </p>
+          </div>
+
+          <div class="analogy-box">
+            <strong>Analogy:</strong> Reading a whole paragraph and highlighting the important relationships between words, vs. reading one word at a time from left to right and trying to remember what came before.
+          </div>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Key Vocabulary</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            These are the terms you'll hear in every conversation about LLMs. Understanding them puts you ahead of most people.
+          </p>
+
+          <div class="space-y-4 mb-6">
+            <div class="key-term">
+              <dt>Token</dt>
+              <dd>The basic unit an LLM processes. A token is roughly 4 characters or 0.75 words. The word "hamburger" might be split into "ham," "bur," and "ger" &mdash; three tokens.</dd>
+            </div>
+
+            <div class="key-term">
+              <dt>Context Window</dt>
+              <dd>The maximum amount of text (measured in tokens) a model can process at once. A larger context window means the model can "see" more of the conversation or document at the same time.</dd>
+            </div>
+
+            <div class="key-term">
+              <dt>Parameters</dt>
+              <dd>Internal values learned during training. Think of them as the knowledge stored in the network's connections. More parameters generally means a more capable model. GPT-4 is estimated to have over a trillion parameters.</dd>
+            </div>
+
+            <div class="key-term">
+              <dt>Temperature</dt>
+              <dd>Controls how random or creative the model's output is. Low temperature (0) = focused, predictable responses. High temperature (1+) = more creative, varied, and sometimes surprising responses.</dd>
+            </div>
+          </div>
+
+          <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Who Makes What</h2>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            The AI landscape moves fast, but here are the major players and their flagship models:
+          </p>
+
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-gray-50 rounded-lg p-4 text-center">
+                <p class="font-bold text-navy text-sm mb-1">OpenAI</p>
+                <p class="text-gray-600 text-sm">GPT-4, ChatGPT</p>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-4 text-center">
+                <p class="font-bold text-navy text-sm mb-1">Anthropic</p>
+                <p class="text-gray-600 text-sm">Claude</p>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-4 text-center">
+                <p class="font-bold text-navy text-sm mb-1">Google</p>
+                <p class="text-gray-600 text-sm">Gemini</p>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-4 text-center">
+                <p class="font-bold text-navy text-sm mb-1">Meta</p>
+                <p class="text-gray-600 text-sm">Llama (open source)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deep Dive -->
+          <div class="deep-dive mt-8">
+            <button class="deep-dive-toggle" aria-expanded="false">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              Deep Dive: Open Source vs. Closed Models
+            </button>
+            <div class="deep-dive-content">
+              <p><strong>Open source models</strong> (like Meta's Llama and Mistral) release their model weights publicly. Anyone can download, use, modify, and build on them. This means companies can run these models on their own servers, customize them for specific tasks, and avoid sending data to a third party.</p>
+              <p class="mt-3"><strong>Closed models</strong> (like GPT-4 and Claude) are only accessible through an API or web interface. The model weights are proprietary. You send your input to the company's servers and get a response back.</p>
+              <p class="mt-3">The trade-off: open source gives you control and privacy, but closed models are often more capable (for now) and easier to use without infrastructure expertise. Many organizations use both, depending on the task.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Knowledge Check -->
+        <div class="mt-10">
+          <h3 class="font-heading text-xl font-bold text-navy mb-4">Knowledge Check</h3>
+
+          <div class="quiz" data-answer="b">
+            <p class="quiz-question">How does an LLM generate text?</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>It looks up answers in a database</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>It predicts the most likely next token based on patterns in its training data</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <span class="radio-dot"></span>
+                <span>It copies text from the internet</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! LLMs generate text by predicting the next token, one at a time, based on patterns learned during training. There's no database lookup involved.</div>
+            <div class="quiz-feedback incorrect">Not quite. LLMs don't store or look up answers. They <strong>predict the most likely next token</strong> based on patterns learned from their training data, generating text one piece at a time.</div>
+          </div>
+
+          <div class="quiz mt-6" data-answer="b">
+            <p class="quiz-question">True or false: LLMs truly understand language the way humans do.</p>
+            <div class="quiz-options">
+              <label class="quiz-option" data-value="a">
+                <span class="radio-dot"></span>
+                <span>True</span>
+              </label>
+              <label class="quiz-option" data-value="b">
+                <span class="radio-dot"></span>
+                <span>False</span>
+              </label>
+            </div>
+            <button class="quiz-submit" disabled>Check Answer</button>
+            <div class="quiz-feedback correct">Correct! LLMs are very good at predicting text patterns, but they don't have understanding or consciousness. They produce text that sounds right based on statistical patterns &mdash; which is impressive, but fundamentally different from human comprehension.</div>
+            <div class="quiz-feedback incorrect">Not quite. LLMs are very good at predicting text patterns, but they don't have understanding or consciousness. They produce text that sounds right based on <strong>statistical patterns</strong>, not genuine comprehension.</div>
+          </div>
+        </div>
+
+        <!-- Lesson Complete -->
+        <label class="lesson-complete-check">
+          <input type="checkbox" data-lesson="lesson-3">
+          <span>Mark Lesson 3 as complete</span>
+        </label>
+
+        <!-- Lesson Nav -->
+        <div class="lesson-nav">
+          <a href="lesson-2.html">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Previous: Neural Networks
+          </a>
+          <a href="lesson-4.html">
+            Next: Prompt Engineering
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-navy py-6">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula. Built with curiosity and Claude Code.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
