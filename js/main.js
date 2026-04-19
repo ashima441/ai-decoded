@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   allQuizzes.forEach((quiz, index) => {
     const options = quiz.querySelectorAll('.quiz-option');
+    const radios = quiz.querySelectorAll('.quiz-option input[type="radio"]');
     const submitBtn = quiz.querySelector('.quiz-submit');
     const feedbackCorrect = quiz.querySelector('.quiz-feedback.correct');
     const feedbackIncorrect = quiz.querySelector('.quiz-feedback.incorrect');
@@ -39,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     quizResults.set(index, false); // not yet correct
 
-    options.forEach(option => {
-      option.addEventListener('click', () => {
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
         if (answered) return;
         options.forEach(o => o.classList.remove('selected'));
-        option.classList.add('selected');
-        selectedAnswer = option.dataset.value;
+        radio.closest('.quiz-option').classList.add('selected');
+        selectedAnswer = radio.value;
         if (submitBtn) submitBtn.disabled = false;
       });
     });
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         option.classList.remove('selected', 'correct', 'incorrect');
         option.style.cursor = 'pointer';
       });
+      radios.forEach(r => r.checked = false);
       submitBtn.disabled = true;
       submitBtn.style.display = '';
       retryBtn.style.display = 'none';

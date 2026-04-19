@@ -157,7 +157,22 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--navy); }
   background: var(--red-bg);
 }
 
-.quiz-option input[type="radio"] { display: none; }
+.quiz-option input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.quiz-option:focus-within {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
 
 .quiz-option .radio-dot {
   width: 20px;
