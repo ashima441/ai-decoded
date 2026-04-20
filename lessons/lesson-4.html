@@ -94,7 +94,13 @@
 
           <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Temperature: Controlling Creativity</h2>
           <p class="text-gray-700 text-base leading-relaxed mb-4">
-            Temperature is a setting that controls how "creative" or "random" a model's output is. It affects how the model chooses its next word from the list of possible words.
+            Temperature is a number (usually between 0 and 2) you set when you send a request to a model. It controls how predictable or random the output feels. The name is borrowed from physics &mdash; low temperature = frozen and orderly, high temperature = chaotic &mdash; and the same metaphor applies here: low values keep the output safe and repeatable, high values let the model take more risks with word choice.
+          </p>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            <strong>Where do you actually set it?</strong> You won't find a temperature slider inside ChatGPT or Claude's chat apps &mdash; those companies pick a value for you. You'll see it when you use a developer "playground" tool (like OpenAI's Playground or Anthropic's Console) or when you call the model from code.
+          </p>
+          <p class="text-gray-700 text-base leading-relaxed mb-4">
+            Temperature is a continuous slider, not a switch. The two cards below show the two ends of the dial; most real-world use sits somewhere in between.
           </p>
 
           <div class="bg-white rounded-xl p-6 shadow-md mb-6">
@@ -107,14 +113,14 @@
                 </div>
               </div>
               <div class="text-center">
-                <p class="font-bold text-terracotta text-sm mb-2">High Temperature (~0.8–1.5)</p>
+                <p class="font-bold text-terracotta text-sm mb-2">High Temperature (~0.8&ndash;1.5)</p>
                 <div class="bg-orange-50 rounded-lg p-4 text-sm text-gray-600">
                   Creative & varied<br>
-                  <span class="text-xs text-gray-400 mt-1 block">Great for brainstorming, creative writing, and exploring diverse ideas. The model assigns more probability to less likely words.</span>
+                  <span class="text-xs text-gray-400 mt-1 block">Great for brainstorming, creative writing, and exploring diverse ideas. The model is more willing to pick words that aren't the top choice.</span>
                 </div>
               </div>
             </div>
-            <p class="text-xs text-gray-500 mt-4 text-center">Most APIs accept temperature from 0 to 2. Values above 2 are rare — output starts to feel incoherent rather than creative.</p>
+            <p class="text-xs text-gray-500 mt-4 text-center">Most APIs accept 0 to 2. Above 1.5 the output starts to feel incoherent rather than creative.</p>
           </div>
 
           <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Real-World Example: Prompt Engineering in Practice</h2>
