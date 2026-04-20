@@ -107,21 +107,22 @@
                 </div>
               </div>
               <div class="text-center">
-                <p class="font-bold text-terracotta text-sm mb-2">High Temperature (1+)</p>
+                <p class="font-bold text-terracotta text-sm mb-2">High Temperature (~0.8–1.5)</p>
                 <div class="bg-orange-50 rounded-lg p-4 text-sm text-gray-600">
                   Creative & varied<br>
-                  <span class="text-xs text-gray-400 mt-1 block">Great for brainstorming, creative writing, and exploring diverse ideas. The model is more willing to pick unexpected words.</span>
+                  <span class="text-xs text-gray-400 mt-1 block">Great for brainstorming, creative writing, and exploring diverse ideas. The model assigns more probability to less likely words.</span>
                 </div>
               </div>
             </div>
+            <p class="text-xs text-gray-500 mt-4 text-center">Most APIs accept temperature from 0 to 2. Values above 2 are rare — output starts to feel incoherent rather than creative.</p>
           </div>
 
           <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Real-World Example: Prompt Engineering in Practice</h2>
           <p class="text-gray-700 text-base leading-relaxed mb-4">
-            When I built my portfolio website using Claude Code (an AI agent), I created a file called <a href="https://github.com/ashima441/zero-to-live" target="_blank" rel="noopener" class="text-terracotta font-medium hover:underline">CLAUDE.md</a> that acted as a system prompt — it told the AI what the project was, what design rules to follow, and what tone to use. This is prompt engineering applied to a real development workflow.
+            Developers working with AI coding agents often keep a project-level file (commonly named <code class="bg-warm-gray px-1.5 py-0.5 rounded text-sm">CLAUDE.md</code>) that acts as a persistent system prompt. It describes what the project is, what design rules to follow, and what tone to use — so every session starts with the right context instead of re-explaining everything from scratch.
           </p>
           <p class="text-gray-700 text-base leading-relaxed mb-4">
-            Instead of giving the AI vague instructions each time, the system prompt file ensured every interaction started with the right context. The AI consistently produced code that matched the project's style because it always knew the rules.
+            The payoff is consistency: the AI produces code that matches the project's style because the rules are always in front of it. It's prompt engineering applied to a real workflow, not a one-off prompt trick.
           </p>
 
           <div class="analogy-box">
@@ -233,7 +234,7 @@
 
   <footer class="bg-navy py-6">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula. Built with curiosity and Claude Code.</p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 

@@ -173,6 +173,12 @@
           <p class="text-gray-700 text-sm leading-relaxed">LLMs generate text by predicting the next token, powered by the Transformer architecture's attention mechanism. They don't understand language — they're extremely good at pattern matching. Knowing the vocabulary (tokens, context window, parameters, temperature) lets you use and evaluate these tools more effectively.</p>
         </div>
 
+        <!-- Optional Challenge -->
+        <div class="bg-gold/10 border-l-4 border-gold rounded-r-lg p-5 mb-10">
+          <p class="font-semibold text-navy text-sm mb-2">Try This (Optional)</p>
+          <p class="text-gray-700 text-sm leading-relaxed">Think of an AI tool you've used in the last week. Find one moment where a response sounded confident but turned out to be wrong. What about the output — tone, specificity, fluent prose — made it feel more authoritative than it should have? That mismatch is the pattern-matching surface without underlying comprehension.</p>
+        </div>
+
         <!-- Knowledge Check -->
         <div class="mt-10">
           <h3 class="font-heading text-xl font-bold text-navy mb-4">Knowledge Check</h3>
@@ -202,22 +208,27 @@
           </div>
 
           <div class="quiz mt-6" data-answer="b">
-            <p class="quiz-question">True or false: LLMs truly understand language the way humans do.</p>
+            <p class="quiz-question">Which statement is most accurate about how an LLM "knows" things?</p>
             <div class="quiz-options" role="radiogroup" aria-label="Question 2">
               <label class="quiz-option" data-value="a">
                 <input type="radio" name="l3-q2" value="a">
                 <span class="radio-dot"></span>
-                <span>True</span>
+                <span>It understands concepts the way humans do, just faster</span>
               </label>
               <label class="quiz-option" data-value="b">
                 <input type="radio" name="l3-q2" value="b">
                 <span class="radio-dot"></span>
-                <span>False</span>
+                <span>It recognizes statistical patterns in text without genuine comprehension</span>
+              </label>
+              <label class="quiz-option" data-value="c">
+                <input type="radio" name="l3-q2" value="c">
+                <span class="radio-dot"></span>
+                <span>It stores facts in a structured knowledge graph and looks them up on demand</span>
               </label>
             </div>
             <button class="quiz-submit" disabled>Check Answer</button>
-            <div class="quiz-feedback correct">Correct! LLMs are very good at predicting text patterns, but they don't have understanding or consciousness. They produce text that sounds right based on statistical patterns &mdash; which is impressive, but fundamentally different from human comprehension.</div>
-            <div class="quiz-feedback incorrect">Not quite. LLMs are very good at predicting text patterns, but they don't have understanding or consciousness. They produce text that sounds right based on <strong>statistical patterns</strong>, not genuine comprehension.</div>
+            <div class="quiz-feedback correct">Correct! LLMs are very good at predicting text patterns, but they don't have understanding or consciousness. They produce text that sounds right based on statistical patterns &mdash; impressive, but fundamentally different from human comprehension.</div>
+            <div class="quiz-feedback incorrect">Not quite. LLMs don't understand or look anything up. They <strong>recognize statistical patterns</strong> in text and predict what's likely to come next. The output sounds right because the patterns fit, not because the model comprehends.</div>
           </div>
         </div>
 
@@ -245,7 +256,7 @@
 
   <footer class="bg-navy py-6">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula. Built with curiosity and Claude Code.</p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 

@@ -153,6 +153,7 @@
           <div class="analogy-box">
             <strong>Analogy:</strong> Imagine plotting words on a map where similar words are in the same neighborhood. "Dog," "puppy," and "canine" would all be on the same block. "Refrigerator" would be across town. Embeddings create this map mathematically.
           </div>
+          <p class="text-xs text-gray-500 mt-2">A technical note: real embeddings live in 1,000+ dimensions, not on a 2D map. The neighborhood analogy captures the principle (similar meanings cluster together), not the shape.</p>
 
           <p class="text-gray-700 text-base leading-relaxed mb-4 mt-4">
             <strong>Why embeddings matter:</strong> Embeddings power the search step in RAG. When a user asks a question, the system converts the question into an embedding, then finds documents with similar embeddings. This is how it retrieves relevant information — not by matching keywords, but by matching meaning.
@@ -177,6 +178,12 @@
         <div class="bg-navy/5 border-l-4 border-navy rounded-r-lg p-5 mt-10 mb-10">
           <p class="font-semibold text-navy text-sm mb-1">Key Takeaway</p>
           <p class="text-gray-700 text-sm leading-relaxed">Fine-tuning permanently adapts a model for a specific domain. RAG retrieves external information at query time. Fine-tuning is for behavior, RAG is for facts. Embeddings make this all work by converting meaning into searchable numbers.</p>
+        </div>
+
+        <!-- Optional Challenge -->
+        <div class="bg-gold/10 border-l-4 border-gold rounded-r-lg p-5 mb-10">
+          <p class="font-semibold text-navy text-sm mb-2">Try This (Optional)</p>
+          <p class="text-gray-700 text-sm leading-relaxed">Your team wants to build an internal chatbot that answers HR policy questions. The policies are updated quarterly, and employees often phrase questions informally ("sick days" instead of "PTO"). Would you lean toward RAG, fine-tuning, or both — and which part of your choice depends on embeddings doing their job well?</p>
         </div>
 
         <!-- Knowledge Check -->
@@ -256,7 +263,7 @@
 
   <footer class="bg-navy py-6">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula. Built with curiosity and Claude Code.</p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 
