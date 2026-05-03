@@ -5,21 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesson 4: Prompt Engineering & Working With AI — AI Decoded</title>
   <meta name="description" content="Learn prompt engineering techniques: zero-shot, few-shot, chain-of-thought, system prompts, and temperature settings to get the best results from AI.">
+  <link rel="canonical" href="https://ashima441.github.io/ai-decoded/lessons/lesson-4.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
-          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
-        },
-      },
-    }
-  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/tailwind.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="font-body bg-off-white">
@@ -120,7 +111,7 @@
                 </div>
               </div>
             </div>
-            <p class="text-xs text-gray-500 mt-4 text-center">Most APIs accept 0 to 2. Above 1.5 the output starts to feel incoherent rather than creative.</p>
+            <p class="text-xs text-gray-500 mt-4 text-center">The accepted range varies by provider &mdash; OpenAI accepts 0 to 2, Anthropic 0 to 1. Pushed toward the upper end, the output starts to feel incoherent rather than creative.</p>
           </div>
 
           <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Real-World Example: Prompt Engineering in Practice</h2>
@@ -156,6 +147,12 @@
         <div class="bg-navy/5 border-l-4 border-navy rounded-r-lg p-5 mt-10 mb-10">
           <p class="font-semibold text-navy text-sm mb-1">Key Takeaway</p>
           <p class="text-gray-700 text-sm leading-relaxed">How you communicate with AI determines what you get back. Zero-shot, few-shot, and chain-of-thought are your core techniques. System prompts set the rules. Temperature controls creativity. Prompt engineering is an iterative skill, not a one-time trick.</p>
+        </div>
+
+        <!-- Optional Challenge -->
+        <div class="bg-gold/10 border-l-4 border-gold rounded-r-lg p-5 mb-10">
+          <p class="font-semibold text-navy text-sm mb-2">Try This (Optional)</p>
+          <p class="text-gray-700 text-sm leading-relaxed">Take a recent prompt you've sent to ChatGPT or Claude and identify which technique it used (zero-shot, few-shot, chain-of-thought, or none of the above). Then rewrite it using a different technique and notice what shifts about the response &mdash; tone, structure, accuracy, or all three.</p>
         </div>
 
         <!-- Knowledge Check -->
@@ -240,7 +237,7 @@
 
   <footer class="bg-navy py-6">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated May 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 

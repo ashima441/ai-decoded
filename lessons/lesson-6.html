@@ -5,21 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesson 6: AI Agents, Hallucinations & What's Next — AI Decoded</title>
   <meta name="description" content="AI agents, hallucinations, multimodal AI, and the future of artificial intelligence. Learn what's next and why AI literacy matters.">
+  <link rel="canonical" href="https://ashima441.github.io/ai-decoded/lessons/lesson-6.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
-          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
-        },
-      },
-    }
-  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/tailwind.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="font-body bg-off-white">
@@ -63,6 +54,43 @@
           <p class="text-gray-700 text-base leading-relaxed mb-4">
             The key difference from chatbots: a chatbot responds to one message at a time. An agent <strong>plans</strong>, <strong>executes</strong>, <strong>observes results</strong>, and <strong>adapts</strong>. It can break a complex goal into steps, use different tools for each step, and adjust its approach based on what it finds along the way.
           </p>
+
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <p class="font-bold text-navy text-sm uppercase tracking-wider mb-3 text-center">The Agent Loop</p>
+            <svg viewBox="0 0 600 340" role="img" aria-labelledby="agent-title agent-desc" class="w-full h-auto">
+              <title id="agent-title">AI agent loop diagram</title>
+              <desc id="agent-desc">An agent cycles through four steps — plan, act, observe, adapt — and repeats until the goal is achieved.</desc>
+
+              <defs>
+                <marker id="agent-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/>
+                </marker>
+              </defs>
+
+              <circle cx="300" cy="170" r="60" fill="#1B2A4A" opacity="0.05" stroke="#1B2A4A" stroke-width="1" stroke-dasharray="3 3"/>
+              <text x="300" y="167" text-anchor="middle" font-family="Playfair Display,serif" font-size="18" font-weight="700" fill="#1B2A4A">Goal</text>
+              <text x="300" y="186" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#64748B">repeat until done</text>
+
+              <rect x="245" y="20" width="110" height="55" rx="8" fill="#FFF8F6" stroke="#E07A5F" stroke-width="2"/>
+              <text x="300" y="54" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#1B2A4A">Plan</text>
+
+              <rect x="455" y="142" width="110" height="55" rx="8" fill="#FFF8F6" stroke="#E07A5F" stroke-width="2"/>
+              <text x="510" y="176" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#1B2A4A">Act</text>
+
+              <rect x="245" y="265" width="110" height="55" rx="8" fill="#FFF8F6" stroke="#E07A5F" stroke-width="2"/>
+              <text x="300" y="299" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#1B2A4A">Observe</text>
+
+              <rect x="35" y="142" width="110" height="55" rx="8" fill="#FFF8F6" stroke="#E07A5F" stroke-width="2"/>
+              <text x="90" y="176" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#1B2A4A">Adapt</text>
+
+              <g stroke="#E07A5F" stroke-width="2" fill="none">
+                <path d="M 358 50 Q 460 50 508 140" marker-end="url(#agent-arrow)"/>
+                <path d="M 508 200 Q 460 295 358 292" marker-end="url(#agent-arrow)"/>
+                <path d="M 242 292 Q 140 295 92 200" marker-end="url(#agent-arrow)"/>
+                <path d="M 92 140 Q 140 50 242 50" marker-end="url(#agent-arrow)"/>
+              </g>
+            </svg>
+          </div>
 
           <div class="bg-white rounded-xl p-6 shadow-md mb-6">
             <p class="font-bold text-navy text-sm uppercase tracking-wider mb-3">Examples of AI Agents</p>
@@ -149,6 +177,8 @@
             </div>
           </div>
 
+          <p class="text-xs text-gray-500 mb-4">Specific model names will date quickly &mdash; capabilities ship every few months. The pattern is what matters: AI is moving from text-only to processing whatever you can show it.</p>
+
           <p class="text-gray-700 text-base leading-relaxed mb-4">
             Why does this matter? Because AI is moving beyond just text. The next generation of AI tools will understand the world more like we do — through multiple senses, not just words on a screen.
           </p>
@@ -194,6 +224,12 @@
           <p class="text-gray-700 text-sm leading-relaxed">AI agents go beyond chat — they plan, use tools, and complete multi-step tasks. Hallucination is a fundamental limitation of how LLMs work, not a bug to be patched. The future belongs to people who understand both how AI works and how people learn.</p>
         </div>
 
+        <!-- Optional Challenge: Course Capstone -->
+        <div class="bg-gold/10 border-l-4 border-gold rounded-r-lg p-5 mb-10">
+          <p class="font-semibold text-navy text-sm mb-2">Try This (Optional) &mdash; Course Capstone</p>
+          <p class="text-gray-700 text-sm leading-relaxed">Pick one task from your actual work that you'd like to delegate to AI. Sketch how you'd build it using techniques from at least three lessons in this course. Which model family would you reach for, and why? What would the system prompt say? Would you use RAG or fine-tuning &mdash; or both? Where in the workflow does a human review step belong? You don't need to build it. Describing it well is the harder skill.</p>
+        </div>
+
         <!-- Knowledge Check -->
         <div class="mt-10">
           <h3 class="font-heading text-xl font-bold text-navy mb-4">Knowledge Check</h3>
@@ -228,32 +264,32 @@
           </div>
 
           <div class="quiz mt-6" data-answer="b">
-            <p class="quiz-question">Why do LLMs sometimes "hallucinate" (generate false information)?</p>
+            <p class="quiz-question">Your team is building a customer support chatbot using an LLM. Customers ask about your product's specs, which change every release. The bot keeps inventing features that don't exist. Which approach most directly reduces this kind of hallucination?</p>
             <div class="quiz-options" role="radiogroup" aria-label="Question 2">
               <label class="quiz-option" data-value="a">
                 <input type="radio" name="l6-q2" value="a">
                 <span class="radio-dot"></span>
-                <span>They are programmed to lie</span>
+                <span>Raise the temperature so the model is more creative</span>
               </label>
               <label class="quiz-option" data-value="b">
                 <input type="radio" name="l6-q2" value="b">
                 <span class="radio-dot"></span>
-                <span>They predict likely text based on patterns, not verified facts</span>
+                <span>Use RAG to retrieve the current spec sheet at query time and ground the answer in it</span>
               </label>
               <label class="quiz-option" data-value="c">
                 <input type="radio" name="l6-q2" value="c">
                 <span class="radio-dot"></span>
-                <span>They have bad training data</span>
+                <span>Switch to a model with more parameters</span>
               </label>
               <label class="quiz-option" data-value="d">
                 <input type="radio" name="l6-q2" value="d">
                 <span class="radio-dot"></span>
-                <span>They run out of memory</span>
+                <span>Add a longer system prompt explaining your company's values</span>
               </label>
             </div>
             <button class="quiz-submit" disabled>Check Answer</button>
-            <div class="quiz-feedback correct">Correct! LLMs generate text by predicting what's most likely to come next based on patterns — not by verifying facts. That's why they can produce plausible-sounding but incorrect information.</div>
-            <div class="quiz-feedback incorrect">Not quite. LLMs hallucinate because they <strong>predict likely text based on patterns</strong>, not because they verify facts. They generate what sounds right, which isn't always what is right.</div>
+            <div class="quiz-feedback correct">Correct! When facts change frequently and accuracy matters, RAG is the right tool &mdash; it pulls the current document into the prompt so the model has the actual spec to work from instead of guessing.</div>
+            <div class="quiz-feedback incorrect">Not quite. The problem is that the model has no access to your current specs &mdash; it's filling in plausible-sounding text from its training data. RAG fixes this directly by retrieving the actual document at query time. Bigger models or longer prompts won't help if the facts simply aren't in the model.</div>
           </div>
         </div>
 
@@ -321,7 +357,7 @@
 
   <footer class="bg-navy py-6">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated May 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 

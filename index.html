@@ -13,18 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
-          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
-        },
-      },
-    }
-  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="css/tailwind.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-body bg-off-white">
@@ -57,6 +47,7 @@
         <div class="progress-bar-bg h-2">
           <div class="progress-bar-fill" style="width: 0%"></div>
         </div>
+        <button id="reset-progress" class="text-white/50 text-xs hover:text-white/80 hover:underline underline-offset-2 mt-3" style="display:none">Reset progress</button>
       </div>
     </div>
   </header>
@@ -214,7 +205,7 @@
   <!-- Footer -->
   <footer class="bg-navy py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated May 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 

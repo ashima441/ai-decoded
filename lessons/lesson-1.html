@@ -5,21 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesson 1: What is AI, Really? — AI Decoded</title>
   <meta name="description" content="AI vs. machine learning vs. deep learning. How machines learn from data. The three types of learning explained simply.">
+  <link rel="canonical" href="https://ashima441.github.io/ai-decoded/lessons/lesson-1.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
-          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
-        },
-      },
-    }
-  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/tailwind.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="font-body bg-off-white">
@@ -159,6 +150,12 @@
           <p class="text-gray-700 text-sm leading-relaxed">AI is the broadest concept, machine learning is a specific approach within AI that learns from data, and deep learning is a powerful type of ML using multi-layered neural networks. The key shift: instead of programming rules, you show the machine examples and it figures out the rules.</p>
         </div>
 
+        <!-- Optional Challenge -->
+        <div class="bg-gold/10 border-l-4 border-gold rounded-r-lg p-5 mb-10">
+          <p class="font-semibold text-navy text-sm mb-2">Try This (Optional)</p>
+          <p class="text-gray-700 text-sm leading-relaxed">Pick three apps you used today &mdash; your email, your phone keyboard, a streaming service. For each, ask: is the smart part rule-based programming, or is it likely learning from data? "AI" covers a wider spectrum than the headlines suggest, and noticing the difference is the first useful skill.</p>
+        </div>
+
         <!-- Knowledge Check -->
         <div class="mt-10">
           <h3 class="font-heading text-xl font-bold text-navy mb-4">Knowledge Check</h3>
@@ -188,27 +185,32 @@
           </div>
 
           <div class="quiz mt-6" data-answer="c">
-            <p class="quiz-question">Which statement is true about the relationship between AI, machine learning, and deep learning?</p>
+            <p class="quiz-question">Two startups both market "AI-powered" spam filters. Startup A wrote a list of keyword rules: if an email contains "free money," flag it. Startup B trained a model on millions of labeled emails to find patterns on its own. Which statement is most accurate?</p>
             <div class="quiz-options" role="radiogroup" aria-label="Question 2">
               <label class="quiz-option" data-value="a">
                 <input type="radio" name="l1-q2" value="a">
                 <span class="radio-dot"></span>
-                <span>They are three different names for the same thing</span>
+                <span>Only Startup B's product is AI; Startup A's is just regular software</span>
               </label>
               <label class="quiz-option" data-value="b">
                 <input type="radio" name="l1-q2" value="b">
                 <span class="radio-dot"></span>
-                <span>Machine learning is the broadest category, containing both AI and deep learning</span>
+                <span>Both use machine learning, just with different complexity</span>
               </label>
               <label class="quiz-option" data-value="c">
                 <input type="radio" name="l1-q2" value="c">
                 <span class="radio-dot"></span>
-                <span>Deep learning is a subset of machine learning, which is a subset of AI</span>
+                <span>Both products are AI, but only Startup B's uses machine learning</span>
+              </label>
+              <label class="quiz-option" data-value="d">
+                <input type="radio" name="l1-q2" value="d">
+                <span class="radio-dot"></span>
+                <span>Neither qualifies as AI without deep learning</span>
               </label>
             </div>
             <button class="quiz-submit" disabled>Check Answer</button>
-            <div class="quiz-feedback correct">Correct! Like nesting dolls: AI is the biggest (broadest concept), ML fits inside AI, and deep learning fits inside ML.</div>
-            <div class="quiz-feedback incorrect">Not quite. Think of the nesting dolls: AI is the broadest concept. Machine learning is a specific approach within AI. Deep learning is a specific technique within machine learning.</div>
+            <div class="quiz-feedback correct">Correct! AI is the broad umbrella &mdash; rule-based systems count. Machine learning is the narrower category that learns patterns from data, which is what Startup B is doing.</div>
+            <div class="quiz-feedback incorrect">Not quite. Remember the nesting dolls: rule-based systems <em>are</em> AI (just not ML). Startup A's keyword filter is AI. Startup B goes further by learning from data &mdash; that's machine learning.</div>
           </div>
         </div>
 
@@ -236,7 +238,7 @@
 
   <footer class="bg-navy py-6">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated May 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 

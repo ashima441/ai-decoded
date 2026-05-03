@@ -5,21 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesson 5: RAG, Fine-Tuning & Embeddings — AI Decoded</title>
   <meta name="description" content="Learn how to make AI work with your own data using RAG, fine-tuning, and embeddings. Understand when to use each approach.">
+  <link rel="canonical" href="https://ashima441.github.io/ai-decoded/lessons/lesson-5.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
-          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
-        },
-      },
-    }
-  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/tailwind.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="font-body bg-off-white">
@@ -62,7 +53,7 @@
           </p>
 
           <div class="analogy-box">
-            <strong>Analogy:</strong> A chef trained in French cooking (pre-trained) learning to specialize in Japanese cuisine (fine-tuned). They don't start from zero — they adapt existing skills like knife technique and flavor balancing to a new culinary tradition.
+            <strong>Analogy:</strong> A pianist trained in classical music (pre-trained) learning to play jazz (fine-tuned). They don't start from zero — they adapt existing skills like rhythm, harmony, and finger technique to a new style. The base musicianship transfers; only the specialization is new.
           </div>
 
           <p class="text-gray-700 text-base leading-relaxed mb-4 mt-4">
@@ -76,6 +67,50 @@
 
           <h3 class="font-heading text-lg font-bold text-navy mt-6 mb-3">How RAG Works</h3>
           <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+
+            <svg viewBox="0 0 720 140" role="img" aria-labelledby="rag-title rag-desc" class="w-full h-auto mb-5">
+              <title id="rag-title">RAG pipeline diagram</title>
+              <desc id="rag-desc">A user question is converted into an embedding, used to search a knowledge base, top documents are retrieved, then both question and documents are sent to the LLM to produce a grounded answer.</desc>
+
+              <defs>
+                <marker id="rag-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+                </marker>
+              </defs>
+
+              <rect x="10" y="40" width="110" height="62" rx="8" fill="#FAFAFA" stroke="#1B2A4A" stroke-width="2"/>
+              <text x="65" y="76" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1B2A4A">Question</text>
+
+              <rect x="160" y="40" width="110" height="62" rx="8" fill="#FFF8F6" stroke="#E07A5F" stroke-width="2"/>
+              <text x="215" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#E07A5F">Search</text>
+              <text x="215" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#94A3B8">(by meaning)</text>
+
+              <rect x="310" y="40" width="110" height="62" rx="8" fill="#FFFBF0" stroke="#B45309" stroke-width="2"/>
+              <text x="365" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#B45309">Top Docs</text>
+              <text x="365" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#94A3B8">(retrieved)</text>
+
+              <rect x="460" y="40" width="110" height="62" rx="8" fill="#F0F4FA" stroke="#1B2A4A" stroke-width="2"/>
+              <text x="515" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1B2A4A">LLM</text>
+              <text x="515" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#94A3B8">(Q + docs)</text>
+
+              <rect x="610" y="40" width="100" height="62" rx="8" fill="#F0FFF4" stroke="#16A34A" stroke-width="2"/>
+              <text x="660" y="76" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#16A34A">Answer</text>
+
+              <g stroke="#94A3B8" stroke-width="2" fill="none">
+                <path d="M 120 71 L 156 71" marker-end="url(#rag-arrow)"/>
+                <path d="M 270 71 L 306 71" marker-end="url(#rag-arrow)"/>
+                <path d="M 420 71 L 456 71" marker-end="url(#rag-arrow)"/>
+                <path d="M 570 71 L 606 71" marker-end="url(#rag-arrow)"/>
+              </g>
+
+              <g font-family="Inter,sans-serif" font-size="10" fill="#64748B" text-anchor="middle">
+                <text x="138" y="32">embed</text>
+                <text x="288" y="32">find</text>
+                <text x="438" y="32">attach</text>
+                <text x="588" y="32">generate</text>
+              </g>
+            </svg>
+
             <div class="space-y-3">
               <div class="flex items-start gap-3">
                 <span class="flex-shrink-0 w-7 h-7 bg-navy text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
@@ -150,10 +185,61 @@
             For example, "king" and "queen" would be close together because they share similar meaning. "King" and "bicycle" would be far apart. "Happy" and "joyful" would be neighbors, while "happy" and "concrete" would be distant.
           </p>
 
+          <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <p class="font-bold text-navy text-sm uppercase tracking-wider mb-3 text-center">Embedding Space (2D illustration)</p>
+            <svg viewBox="0 0 720 280" role="img" aria-labelledby="emb-title emb-desc" class="w-full h-auto">
+              <title id="emb-title">Embedding space scatter</title>
+              <desc id="emb-desc">A two-dimensional illustration showing semantically similar words clustering: "cat," "dog," and "puppy" together; "king," "queen," and "prince" together; "table" and "refrigerator" in their own region. Distance reflects difference in meaning.</desc>
+
+              <rect x="10" y="10" width="700" height="260" fill="#FAFAFA" stroke="#E2E8F0" rx="8"/>
+
+              <ellipse cx="135" cy="200" rx="90" ry="45" fill="#E07A5F" fill-opacity="0.08" stroke="#E07A5F" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+              <ellipse cx="445" cy="100" rx="80" ry="35" fill="#64748B" fill-opacity="0.08" stroke="#64748B" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+              <ellipse cx="615" cy="90" rx="80" ry="45" fill="#B45309" fill-opacity="0.08" stroke="#B45309" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+
+              <g fill="#E07A5F">
+                <circle cx="120" cy="200" r="5"/>
+                <circle cx="160" cy="220" r="5"/>
+                <circle cx="100" cy="180" r="5"/>
+              </g>
+              <g font-family="Inter,sans-serif" font-size="13" fill="#1B2A4A">
+                <text x="130" y="204">cat</text>
+                <text x="170" y="224">dog</text>
+                <text x="55" y="184">puppy</text>
+              </g>
+
+              <g fill="#64748B">
+                <circle cx="420" cy="90" r="5"/>
+                <circle cx="465" cy="110" r="5"/>
+              </g>
+              <g font-family="Inter,sans-serif" font-size="13" fill="#1B2A4A">
+                <text x="430" y="94">table</text>
+                <text x="475" y="114">refrigerator</text>
+              </g>
+
+              <g fill="#B45309">
+                <circle cx="600" cy="60" r="5"/>
+                <circle cx="640" cy="90" r="5"/>
+                <circle cx="615" cy="115" r="5"/>
+              </g>
+              <g font-family="Inter,sans-serif" font-size="13" fill="#1B2A4A">
+                <text x="555" y="64">king</text>
+                <text x="650" y="94">queen</text>
+                <text x="535" y="119">prince</text>
+              </g>
+
+              <g font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle">
+                <text x="135" y="258" fill="#E07A5F">ANIMALS</text>
+                <text x="445" y="155" fill="#64748B">FURNITURE</text>
+                <text x="615" y="155" fill="#B45309">ROYALTY</text>
+              </g>
+            </svg>
+          </div>
+
           <div class="analogy-box">
             <strong>Analogy:</strong> Imagine plotting words on a map where similar words are in the same neighborhood. "Dog," "puppy," and "canine" would all be on the same block. "Refrigerator" would be across town. Embeddings create this map mathematically.
           </div>
-          <p class="text-xs text-gray-500 mt-2">A technical note: real embeddings live in 300&ndash;1,500+ dimensions depending on the model, not on a 2D map. The neighborhood analogy captures the principle (similar meanings cluster together), not the shape.</p>
+          <p class="text-xs text-gray-500 mt-2">A technical note: real embeddings live in hundreds to a few thousand dimensions depending on the model (OpenAI's text-embedding-3-large uses 3,072), not on a 2D map. The neighborhood analogy captures the principle (similar meanings cluster together), not the shape.</p>
 
           <p class="text-gray-700 text-base leading-relaxed mb-4 mt-4">
             <strong>Why embeddings matter:</strong> Embeddings power the search step in RAG. When a user asks a question, the system converts the question into an embedding, then finds documents with similar embeddings. This is how it retrieves relevant information — not by matching keywords, but by matching meaning.
@@ -263,7 +349,7 @@
 
   <footer class="bg-navy py-6">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated May 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 

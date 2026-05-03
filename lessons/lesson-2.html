@@ -5,21 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesson 2: Neural Networks & Deep Learning — AI Decoded</title>
   <meta name="description" content="How neural networks work, what makes deep learning 'deep,' and why the 2010s changed everything.">
+  <link rel="canonical" href="https://ashima441.github.io/ai-decoded/lessons/lesson-2.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
-          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
-        },
-      },
-    }
-  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/tailwind.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="font-body bg-off-white">
@@ -127,7 +118,7 @@
             <strong>Deep learning</strong> is simply a neural network with <em>many</em> hidden layers. The word "deep" refers to the <strong>depth</strong> (number of layers), not the complexity of thinking.
           </p>
           <p class="text-gray-700 text-base leading-relaxed mb-4">
-            A simple neural network might have one or two hidden layers. A deep neural network can have dozens, hundreds, or even thousands. More layers allow the network to learn increasingly abstract and complex patterns from data.
+            A simple neural network might have one or two hidden layers. A deep neural network typically has dozens to a few hundred. More layers allow the network to learn increasingly abstract and complex patterns from data.
           </p>
 
           <h2 class="font-heading text-2xl font-bold text-navy mt-10 mb-4">Why Deep Learning Broke Through in the 2010s</h2>
@@ -148,7 +139,7 @@
 
             <div class="key-term">
               <dt>3. Better Algorithms</dt>
-              <dd>Improvements to backpropagation and new techniques like dropout and batch normalization made it possible to train deeper networks without them breaking down.</dd>
+              <dd>New activation functions (ReLU), better weight initialization, and techniques like dropout and batch normalization finally made it possible to train much deeper networks without them breaking down.</dd>
             </div>
           </div>
 
@@ -181,6 +172,12 @@
         <div class="bg-navy/5 border-l-4 border-navy rounded-r-lg p-5 mt-10 mb-10">
           <p class="font-semibold text-navy text-sm mb-1">Key Takeaway</p>
           <p class="text-gray-700 text-sm leading-relaxed">Neural networks process data through layers — input, hidden, and output. 'Deep' learning means many layers. The breakthrough happened when massive data, powerful GPUs, and better algorithms all came together in the 2010s.</p>
+        </div>
+
+        <!-- Optional Challenge -->
+        <div class="bg-gold/10 border-l-4 border-gold rounded-r-lg p-5 mb-10">
+          <p class="font-semibold text-navy text-sm mb-2">Try This (Optional)</p>
+          <p class="text-gray-700 text-sm leading-relaxed">Pick one app or service you'd describe as "AI-powered" &mdash; a recommender, a translator, a photo enhancer. Sketch what its <em>input layer</em> (the data going in) and <em>output layer</em> (the prediction coming out) would be. Everything between them is the black box; that's the "deep" part.</p>
         </div>
 
         <!-- Knowledge Check -->
@@ -260,7 +257,7 @@
 
   <footer class="bg-navy py-6">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated May 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 

@@ -5,21 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesson 3: Large Language Models & Transformers — AI Decoded</title>
   <meta name="description" content="What LLMs are, how the Transformer architecture works, and the key vocabulary you need to talk about AI confidently.">
+  <link rel="canonical" href="https://ashima441.github.io/ai-decoded/lessons/lesson-3.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { navy: '#1B2A4A', terracotta: '#E07A5F', 'terracotta-dark': '#c9664b', gold: '#F2CC8F', 'off-white': '#FAFAFA', 'warm-gray': '#F0EDE8' },
-          fontFamily: { body: ['Inter', 'sans-serif'], heading: ['Playfair Display', 'serif'] },
-        },
-      },
-    }
-  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="../css/tailwind.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="font-body bg-off-white">
@@ -90,9 +81,43 @@
             <p class="text-gray-700 text-base leading-relaxed mb-2">
               Consider the sentence: <em>"The cat sat on the mat because <strong>it</strong> was tired."</em>
             </p>
-            <p class="text-gray-700 text-base leading-relaxed">
+            <p class="text-gray-700 text-base leading-relaxed mb-5">
               What does "it" refer to? A human instantly knows it means "the cat." The attention mechanism allows the model to make this same connection &mdash; it learns to attend to "cat" when processing "it," even though other nouns like "mat" are closer in the sentence.
             </p>
+
+            <svg viewBox="0 0 720 220" role="img" aria-labelledby="attn-title attn-desc" class="w-full h-auto">
+              <title id="attn-title">Attention weights diagram</title>
+              <desc id="attn-desc">In the sentence "The cat sat on the mat because it was tired," arrows show that the word "it" attends most strongly to "cat," with weaker attention to "mat" and "tired."</desc>
+
+              <path d="M 540 122 Q 325 20 110 122" stroke="#E07A5F" stroke-width="3" fill="none" opacity="0.9"/>
+              <path d="M 540 122 Q 455 60 370 122" stroke="#94A3B8" stroke-width="1.5" fill="none" opacity="0.75"/>
+              <path d="M 540 122 Q 600 90 660 122" stroke="#CBD5E1" stroke-width="1" fill="none" opacity="0.7"/>
+
+              <circle cx="540" cy="140" r="18" stroke="#F2CC8F" stroke-width="2" fill="none"/>
+
+              <g font-family="Inter, sans-serif" font-size="15" fill="#475569" text-anchor="middle">
+                <text x="40" y="145">The</text>
+                <text x="110" y="145" fill="#1B2A4A" font-weight="700">cat</text>
+                <text x="180" y="145">sat</text>
+                <text x="240" y="145">on</text>
+                <text x="300" y="145">the</text>
+                <text x="370" y="145">mat</text>
+                <text x="460" y="145">because</text>
+                <text x="540" y="145" fill="#1B2A4A" font-weight="700">it</text>
+                <text x="600" y="145">was</text>
+                <text x="660" y="145">tired</text>
+              </g>
+
+              <g font-family="Inter, sans-serif" font-size="11" fill="#64748B">
+                <line x1="60" y1="195" x2="100" y2="195" stroke="#E07A5F" stroke-width="3"/>
+                <text x="108" y="199" text-anchor="start">strong attention</text>
+                <line x1="240" y1="195" x2="280" y2="195" stroke="#94A3B8" stroke-width="1.5"/>
+                <text x="288" y="199" text-anchor="start">medium</text>
+                <line x1="360" y1="195" x2="400" y2="195" stroke="#CBD5E1" stroke-width="1"/>
+                <text x="408" y="199" text-anchor="start">weak</text>
+              </g>
+            </svg>
+            <p class="text-xs text-gray-500 mt-2 text-center">Illustrative weights, not measured outputs &mdash; real attention happens in many parallel "heads" simultaneously.</p>
           </div>
 
           <div class="analogy-box">
@@ -107,7 +132,7 @@
           <div class="space-y-4 mb-6">
             <div class="key-term">
               <dt>Token</dt>
-              <dd>The basic unit an LLM processes. A token is roughly 4 characters or 0.75 words. The word "hamburger" might be split into "ham," "bur," and "ger" &mdash; three tokens.</dd>
+              <dd>The basic unit an LLM processes. A token is roughly 4 characters or 0.75 words. Common short words like "the" or "cat" are usually one token; longer or rarer words split into pieces &mdash; for example, "tokenization" becomes "token" + "ization."</dd>
             </div>
 
             <div class="key-term">
@@ -117,7 +142,7 @@
 
             <div class="key-term">
               <dt>Parameters</dt>
-              <dd>Internal values learned during training. Think of them as the knowledge stored in the network's connections. More parameters generally means a more capable model. GPT-4 is estimated to have over a trillion parameters.</dd>
+              <dd>Internal values learned during training. Think of them as the knowledge stored in the network's connections. More parameters generally means a more capable model. GPT-4 is reportedly in the trillion-parameter range, though OpenAI has never officially disclosed the number; Meta's open Llama 3.1 model has 405 billion.</dd>
             </div>
 
             <div class="key-term">
@@ -256,7 +281,7 @@
 
   <footer class="bg-navy py-6">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated April 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
+      <p class="text-white/50 text-sm">&copy; 2026 Ashima Sitaula &middot; Built with curiosity and Claude Code &middot; Last updated May 2026 &middot; <a href="https://github.com/ashima441/ai-decoded" target="_blank" rel="noopener" class="hover:text-white/80 hover:underline">Source on GitHub</a></p>
     </div>
   </footer>
 

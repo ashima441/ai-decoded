@@ -182,6 +182,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (progressText) {
       progressText.textContent = `${completedCount} of ${totalLessons} lessons completed`;
     }
+
+    const resetBtn = document.getElementById('reset-progress');
+    if (resetBtn) {
+      if (completedCount > 0) resetBtn.style.display = 'inline-block';
+      resetBtn.addEventListener('click', () => {
+        if (confirm('Reset all course progress? This will clear lesson completion and quiz state.')) {
+          localStorage.removeItem('ai-decoded-progress');
+          localStorage.removeItem('ai-decoded-feedback');
+          window.location.reload();
+        }
+      });
+    }
   }
 
 });
